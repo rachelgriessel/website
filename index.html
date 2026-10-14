@@ -169,20 +169,31 @@
           <p class="mt-5 text-xl text-ink-soft">Whether you're launching, working out what needs fixing, or need someone to run the day-to-day and move things forward.</p>
         </div>
 
-        <ul x-data class="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          <template x-for="(item, i) in [
-            { title: 'Launching', text: 'You\'re launching your online shop or getting started on Amazon.' },
-            { title: 'Next steps', text: 'Your ecommerce business is up and running, but you\'re unsure what to improve next.' },
-            { title: 'Fractional support', text: 'Your team needs experienced support, but you\'re not ready for a full-time senior hire.' },
-            { title: 'Project management', text: 'You have a website project to deliver and need someone to manage it.' },
-            { title: 'Email marketing', text: 'You want email marketing to do more for your business.' },
-            { title: 'Scaling up', text: 'Sales are growing, and your systems, processes or team need to keep up.' }
-          ]" :key="i">
-            <li class="reveal group rounded-3xl bg-cream p-7 transition hover:-translate-y-1 hover:bg-sun-soft">
-              <h3 class="text-2xl"><span class="mark-hover" x-text="item.title"></span></h3>
-              <p class="mt-2 text-base leading-relaxed text-ink-soft" x-text="item.text"></p>
-            </li>
-          </template>
+        <ul class="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <li class="reveal group rounded-3xl bg-cream p-7 transition hover:-translate-y-1 hover:bg-sun-soft">
+            <h3 class="text-2xl"><span class="mark-hover">Launching</span></h3>
+            <p class="mt-2 text-base leading-relaxed text-ink-soft">You're launching your online shop or getting started on Amazon.</p>
+          </li>
+          <li class="reveal group rounded-3xl bg-cream p-7 transition hover:-translate-y-1 hover:bg-sun-soft">
+            <h3 class="text-2xl"><span class="mark-hover">Next steps</span></h3>
+            <p class="mt-2 text-base leading-relaxed text-ink-soft">Your ecommerce business is up and running, but you're unsure what to improve next.</p>
+          </li>
+          <li class="reveal group rounded-3xl bg-cream p-7 transition hover:-translate-y-1 hover:bg-sun-soft">
+            <h3 class="text-2xl"><span class="mark-hover">Fractional support</span></h3>
+            <p class="mt-2 text-base leading-relaxed text-ink-soft">Your team needs experienced support, but you're not ready for a full-time senior hire.</p>
+          </li>
+          <li class="reveal group rounded-3xl bg-cream p-7 transition hover:-translate-y-1 hover:bg-sun-soft">
+            <h3 class="text-2xl"><span class="mark-hover">Project management</span></h3>
+            <p class="mt-2 text-base leading-relaxed text-ink-soft">You have a website project to deliver and need someone to manage it.</p>
+          </li>
+          <li class="reveal group rounded-3xl bg-cream p-7 transition hover:-translate-y-1 hover:bg-sun-soft">
+            <h3 class="text-2xl"><span class="mark-hover">Email marketing</span></h3>
+            <p class="mt-2 text-base leading-relaxed text-ink-soft">You want email marketing to do more for your business.</p>
+          </li>
+          <li class="reveal group rounded-3xl bg-cream p-7 transition hover:-translate-y-1 hover:bg-sun-soft">
+            <h3 class="text-2xl"><span class="mark-hover">Scaling up</span></h3>
+            <p class="mt-2 text-base leading-relaxed text-ink-soft">Sales are growing, and your systems, processes or team need to keep up.</p>
+          </li>
         </ul>
       </div>
     </section>
@@ -323,7 +334,7 @@
           </div>
 
           <!-- Form -->
-          <div class="reveal" style="transition-delay:.1s" x-data="contactForm()">
+          <div x-data="contactForm()">
             <div class="rounded-[2rem] bg-white p-6 shadow-2xl shadow-ink/10 sm:p-9">
               <!-- Success state -->
               <div x-show="status === 'success'" x-cloak
