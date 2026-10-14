@@ -341,19 +341,6 @@
                 <!-- Honeypot for bots -->
                 <input type="checkbox" name="botcheck" x-model="form.botcheck" class="hidden" tabindex="-1" autocomplete="off" />
 
-                <div>
-                  <p class="mb-3 text-base font-semibold">What can I help with?</p>
-                  <div class="flex flex-wrap gap-2">
-                    <template x-for="topic in topics" :key="topic">
-                      <button type="button" @click="toggle(topic)" :aria-pressed="form.topics.includes(topic)"
-                              :class="form.topics.includes(topic) ? 'bg-ink text-white border-ink' : 'bg-white text-ink border-ink/20 hover:border-ink'"
-                              class="rounded-full border px-4 py-2 text-base font-medium transition focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-focus">
-                        <span x-text="topic"></span>
-                      </button>
-                    </template>
-                  </div>
-                </div>
-
                 <div class="grid gap-5 sm:grid-cols-2">
                   <label class="block">
                     <span class="mb-2 block text-base font-semibold">Name</span>
@@ -415,18 +402,12 @@
     const WEB3FORMS_ACCESS_KEY = "YOUR_ACCESS_KEY_HERE";
 
     function contactForm() {
-      const blank = () => ({ name: "", email: "", company: "", message: "", topics: [], botcheck: false });
+      const blank = () => ({ name: "", email: "", company: "", message: "", botcheck: false });
       return {
-        topics: ["DTC / Shopify", "Amazon", "Email marketing", "Fractional support", "Not sure yet"],
         form: blank(),
         errors: {},
         status: "idle", // idle | sending | success | error
         errorMessage: "",
-
-        toggle(topic) {
-          const t = this.form.topics;
-          t.includes(topic) ? t.splice(t.indexOf(topic), 1) : t.push(topic);
-        },
 
         validate() {
           const e = {};
@@ -459,7 +440,6 @@
                 name: this.form.name,
                 email: this.form.email,
                 company: this.form.company || "—",
-                interested_in: this.form.topics.join(", ") || "—",
                 message: this.form.message,
               }),
             });
