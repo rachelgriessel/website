@@ -410,7 +410,7 @@
   <script>
     // Contact form → Web3Forms (free, static-friendly). Get a key at https://web3forms.com
     // and paste it below; submissions are emailed to the address you registered with.
-    const WEB3FORMS_ACCESS_KEY = "YOUR_ACCESS_KEY_HERE";
+    const WEB3FORMS_ACCESS_KEY = "a8c4b93d-65c7-4eca-b7f3-afb196903311";
 
     function contactForm() {
       const blank = () => ({ name: "", email: "", company: "", message: "", botcheck: false });
@@ -445,7 +445,7 @@
               method: "POST",
               headers: { "Content-Type": "application/json", Accept: "application/json" },
               body: JSON.stringify({
-                access_key: a8c4b93d-65c7-4eca-b7f3-afb196903311,
+                access_key: WEB3FORMS_ACCESS_KEY,
                 subject: `New enquiry from ${this.form.name}`,
                 from_name: "Rachel Griessel website",
                 name: this.form.name,
